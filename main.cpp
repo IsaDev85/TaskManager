@@ -1,8 +1,11 @@
 #include <iostream>
+#include <vector>
 
 int main()
 {
     int opcion;
+    std::string task;
+    std::vector<std::string> vTask;
 
     do
     {
@@ -17,15 +20,25 @@ int main()
         std::cout << std::endl;
         std::cout << "Selecciona una opcion: " << std::endl;
         std::cin >> opcion;
-        
+
         switch (opcion)
         {
         case 1:
             std::cout << "Has elegido agregar tarea " << std::endl;
+            std::cin >> task;
+
+            vTask.push_back(task);
+
             std::cout << std::endl;
             break;
         case 2:
             std::cout << "Mostrando Tareas... " << std::endl;
+
+            for (int i = 0; i < vTask.size(); i++)
+            {
+                std::cout << "Tarea numero " << i + 1 << ": " << vTask[i] << std::endl;
+            }
+
             std::cout << std::endl;
             break;
         case 3:
